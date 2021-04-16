@@ -1,3 +1,3 @@
 FROM alpine:3
 
-RUN apk add --update --nocache openssh bash
+RUN apk add --update --no-cache openssh bash
