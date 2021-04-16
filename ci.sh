@@ -2,6 +2,8 @@
 
 set -x
 
+docker buildx inspect
+
 if [ "$TRAVIS_PULL_REQUEST" = "true" ] || [ "$TRAVIS_BRANCH" != "master" ]; then
   docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
   docker buildx build \
@@ -13,5 +15,3 @@ if [ "$TRAVIS_PULL_REQUEST" = "true" ] || [ "$TRAVIS_BRANCH" != "master" ]; then
 fi
 
 docker images
-
-docker buildx inspect
